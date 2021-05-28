@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <title>Output</title>
+</head>
+<body>
+<h1>Output</h1>
+<p>
+    <label>
+        First Name:
+    </label>
+    <span class="output" th:text="${user.firstName}">
+          Bart
+      </span>
+</p>
+<p>
+    <label>
+        Last Name:
+    </label>
+    <span class="output" th:text="${user.lastName}">
+          Simpson
+      </span>
+</p>
+<p>
+    <a href="Input.html" th:href="@{Input}">Back to Input</a>
+</p>
+<p>
+    <a href="Index.html" th:href="@{Index}">Index</a>
+</p>
+</body>
+</html>

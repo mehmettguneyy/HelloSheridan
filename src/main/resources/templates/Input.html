@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <title>Input</title>
+</head>
+<body>
+<h1>Input</h1>
+<h2>Enter your name</h2>
+<form action="Output.html" th:action="@{Output}" th:object="${user}">
+    <div th:if="${#fields.hasErrors('*')}">
+        <h3 class="error">Input Errors</h3>
+        <ul>
+            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+        </ul>
+    </div>
+    <p>
+        <label for="fn">First Name</label>
+        <input id="fn" th:field="*{firstName}">
+    </p>
+    <p>
+        <label for="ln">Last Name</label>
+        <input id="ln" th:field="*{lastName}">
+    </p>
+    <p>
+        <input type="submit" value="Send">
+    </p>
+</form>
+<p>
+    <a href="Index.html" th:href="@{Index}">Index</a>
+</p>
+</body>
+</html>
